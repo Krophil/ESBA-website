@@ -1,0 +1,69 @@
+/* For all pages */
+
+body {
+    background-color: #80c0e8;
+}
+
+#header
+{
+    background: none;
+	padding: 0;
+}
+
+.jumbo-title {
+    padding: 15px;
+}
+
+/* For index.php */
+
+.meteo {
+    width: 150px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.well {
+    background: transparent;
+}
+
+/* For page.php */
+
+.page-div p {
+    text-align: justify;
+}
+
+tbody {
+    margin: 2em;
+    display: inline-block;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+th{background-color: #A9D0F5}
+
+tr:nth-child(even) {background-color: #E0F2F7}
+
+/* For admin/index.php */
+
+.jumbo-title .admin-btn {
+    margin-top: 4em;
+    text-align: center;
+}
+
+/* For admin/.../index.php */
+
+.shortcut-btn {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+/* For admin/menu/index.php */
+
+.sub-panel {
+    padding-left: 5em;
+}
