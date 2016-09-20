@@ -22,6 +22,7 @@
 /app/tmp/*
 /app/Config/database.php
 /vendors/*
+/dynamic*
 
 # PhpStorm
 
