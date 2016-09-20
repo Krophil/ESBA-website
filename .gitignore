@@ -20,7 +20,7 @@
 # CakePHP 2
 
 /app/tmp/*
-/app/Config/*
+/app/Config/database.php
 /vendors/*
 
 # PhpStorm
