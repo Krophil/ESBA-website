@@ -26,4 +26,5 @@
 
 # PhpStorm
 
-.idea/*
+/.idea
+/nbproject
