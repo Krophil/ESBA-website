@@ -1,7 +1,8 @@
 /* For all pages */
 
 body {
-    background-color: #80c0e8;
+	background: url('/app/webroot/img/background.png') fixed no-repeat;
+	background-size: 100%;
 }
 
 #header
@@ -25,6 +26,8 @@ body {
 
 .well {
     background: transparent;
+	border: 0;
+	padding: 0;
 }
 
 /* For page.php */
