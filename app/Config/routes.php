@@ -31,6 +31,25 @@
  */
 //	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
+Router::connect('/', array(
+		'controller'	=> 'news',
+		'action'		=> 'index',
+));
+
+Router::connect('/news/*', array(
+		'controller'	=> 'news',
+		'action'		=> 'index',
+));
+
+Router::connect('/posts/*', array(
+		'controller'	=> 'posts',
+		'action'		=> 'display',
+));
+
+Router::connect('/divers/:action/*', array(
+		'controller'	=> 'misc',
+));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
@@ -42,17 +61,3 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
-
-Router::connect('/', array(
-		'controller'	=> 'news',
-		'action'		=> 'index',
-));
-
-Router::connect('/page/*', array(
-		'controller'	=> 'posts',
-		'action'		=> 'display',
-));
-
-Router::connect('/divers', array(
-		'controller'	=> 'misc',
-));
