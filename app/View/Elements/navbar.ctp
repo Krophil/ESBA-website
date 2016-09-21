@@ -7,8 +7,8 @@
 			<span class="icon-bar"></span>
 		</button>
 		<?= $this->Html->link(
-				'École de Ski du Ballon d\'Alsace',
-				'/news/index',
+				'ESBA',
+				'/',
 				array('class' => 'navbar-brand')
 		) ?>
 	</div>
@@ -39,7 +39,7 @@
 					<li>
 						<?= $this->Html->link(
 								$subMenu['Menu']['title'],
-								'/page/display/' . $subMenu['Post']['id'] . '/' . $subMenu['Post']['slug']
+								'/posts/display/' . $subMenu['Post']['id'] . '/' . $subMenu['Post']['slug']
 						) ?>
 					</li>
 						
@@ -52,7 +52,7 @@
 				<li>
 					<?= $this->Html->link(
 							$menu['Menu']['title'],
-							'/page/display/' . $menu['Post']['id'] . '/' . $menu['Post']['slug']
+							'/posts/display/' . $menu['Post']['id'] . '/' . $menu['Post']['slug']
 					) ?>
 				</li>
 				
