@@ -50,6 +50,15 @@ Router::connect('/divers/:action/*', array(
 		'controller'	=> 'misc',
 ));
 
+Router::connect('/admin', array(
+		'controller'	=> 'users',
+		'action'		=> 'panel',
+));
+
+Router::connect('/admin/:action/*', array(
+		'controller'	=> 'users',
+));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

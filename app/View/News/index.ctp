@@ -45,19 +45,24 @@
 	</div>
 </div>
 
-<?php foreach($lastNews as $news): ?>
-	
-<div class="news panel panel-default">
-	<div class="panel-heading">
-		<?= $news['News']['title'] ?> | le <?= date("d/m/Y", strtotime($news['News']['created'])); ?>
-	</div>
-	
-	<div class="panel-body">
-		<?= $news['News']['content'] ?>
+<div class="row">
+	<div class="col-md-12">
+
+		<?php foreach($lastNews as $news): ?>
+			
+		<div class="news panel panel-default">
+			<div class="panel-heading">
+				<?= $news['News']['title'] ?> | le <?= date("d/m/Y", strtotime($news['News']['created'])); ?>
+			</div>
+			
+			<div class="panel-body">
+				<?= $news['News']['content'] ?>
+			</div>
+		</div>
+		
+		<?php endforeach; ?>
 	</div>
 </div>
-
-<?php endforeach; ?>
 
 <?php $this->addScript($this->Html->css('jcarousel.basic')); ?>
 <?php $this->addScript($this->Html->script('jquery')); ?>

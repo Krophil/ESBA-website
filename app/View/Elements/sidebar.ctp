@@ -1,13 +1,6 @@
 <div class="row">
 	
 	<div class="col-md-12">
-		<div class="alert alert-dismissible alert-warning">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<?= $this->element('warning-sidebar') ?>
-		</div>
-	</div>
-	
-	<div class="col-md-12">
 		<div class="well">
 			<div class="btn-group-vertical btn-block">
 				<?= $this->Html->link(
@@ -42,11 +35,22 @@
 			<div class="btn-group-vertical btn-block">
 				<?= $this->Html->link(
 						'Espace Administrateur',
-						'/admin/index',
+						'/admin/panel',
 						array(
 								'class'	=> 'btn btn-default',
 						)
 				) ?>
+				<?php
+				if($this->Session->read('Auth.User.id')) {
+					echo $this->Html->link(
+							'Se déconnecter',
+							'/admin/logout',
+							array(
+									'class'	=> 'btn btn-default',
+							)
+					);
+				}
+				?>
 			</div>
 		</div>
 	</div>

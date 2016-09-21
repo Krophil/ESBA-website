@@ -33,9 +33,12 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $components = array(
 			'DebugKit.Toolbar',
+			'Flash',
+			'Session',
+			'Cookie',
 			'Auth' => array(
-					'loginRedirect' => '/users/panel',
-					'logoutRedirect' => '/',
+					'loginRedirect' => array('controller' => 'users', 'action' => 'panel'),
+					'logoutRedirect' => array('controller' => 'news', 'action' => 'index'),
 					'authenticate' => array(
 							'Form' => array('passwordHasher' => 'Blowfish')
 					),
@@ -44,6 +47,15 @@ class AppController extends Controller {
 	
 	
 	public function beforeFilter() {
-		$this->Auth->allow('index', 'display', 'contact', 'partenaires', 'plan');
+		parent::beforeFilter();
+		
+		if (isset($this->params['requested'])) {
+			$this->Auth->allow($this->action);
+		}
+	}
+	
+	
+	public function isAuthorized() {
+		return true;
 	}
 }

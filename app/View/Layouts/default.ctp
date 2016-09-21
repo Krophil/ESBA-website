@@ -27,27 +27,34 @@
 
 <body>
 <div class="container">
-	<div class="jumbotron" id="header">
+	<div id="header" class="hidden-xs">
 		<?= $this->Html->image('header.png', array(
 				'alt'	=> 'École de Ski du Ballon d\'Alsace',
 		)); ?>
 	</div>
 	
-	<?= $this->element('navbar') ?>
-	
 	<div class="row">
-		<div class="col-md-3 col-md-push-9">
-			<?= $this->element('sidebar') ?>
+		<div class="col-md-9">
+			<?= $this->element('navbar') ?>
+			
+			<div class="alert alert-dismissible alert-warning">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<?= $this->element('warning-sidebar') ?>
+			</div>
+			
+			<div class="col-main">
+				<?= $this->Flash->render() ?>
+				<?= $this->fetch('content'); ?>
+			</div>
+		
 		</div>
 		
-		<div class="col-md-9 col-md-pull-3">
-			
-			<?= $this->fetch('content'); ?>
-			
+		<div class="col-md-3">
+			<?= $this->element('sidebar') ?>
 		</div>
 	</div>
 	
-	<div id="footer">
+	<div class="row">
 		<?= $this->element('footer') ?>
 	</div>
 	

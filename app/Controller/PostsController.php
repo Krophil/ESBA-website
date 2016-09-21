@@ -4,7 +4,15 @@ App::uses('AppController', 'Controller');
 
 
 class PostsController extends AppController {
+	
 	public $helpers = array('Html');
+	
+	
+	public function beforeFilter() {
+		parent::beforeFilter();
+		
+		$this->Auth->allow('display');
+	}
 	
 	
 	public function display($id=null, $slug=null) {

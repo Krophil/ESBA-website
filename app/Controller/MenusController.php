@@ -11,6 +11,7 @@ class MenusController extends AppController {
 		return $menuList;
 	}
 	
+	
 	public function getSubMenuList($idParent) {
 		$subMenuList = $this->Menu->getSubMenuList($idParent);
 		$this->set('subMenuList', $subMenuList);
