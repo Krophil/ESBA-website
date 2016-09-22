@@ -11,4 +11,4 @@
 <?php echo $this->Form->end(__('Envoyer')); ?>
 </div>
 
-<?php $this->addScript($this->Html->script('!ckeditor/ckeditor')); ?>
+<?php $this->addScript($this->Html->script('ckeditor/ckeditor')); ?>
