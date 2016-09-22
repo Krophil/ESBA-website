@@ -50,7 +50,7 @@
 
 		<?php foreach($lastNews as $news): ?>
 			
-		<div class="news panel panel-default">
+		<div class="news panel panel-primary">
 			<div class="panel-heading">
 				<?= $news['News']['title'] ?> | le <?= date("d/m/Y", strtotime($news['News']['created'])); ?>
 			</div>

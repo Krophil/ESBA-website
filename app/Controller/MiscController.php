@@ -19,6 +19,11 @@ class MiscController extends AppController {
 	public function info() {}
 	public function plan() {}
 	public function partenaires() {}
+	
+	
+	public function panel() {
+		
+	}
 }
 
 ?>

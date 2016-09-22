@@ -15,16 +15,18 @@ class PostsController extends AppController {
 	}
 	
 	
-	public function panel() {
-		
-	}
+	public function panel() {}
 	
 	
 	public function display($id=null, $slug=null) {
 		$conditions = array('Post.id' => $id);
 		
 		if($this->Post->hasAny($conditions)) {
-			$this->set('post', $this->Post->getPost($id));
+			$postToDisplay = $this->Post->getPost($id);
+			if($postToDisplay['Post']['slug'] != $slug) {
+				$this->redirect('/posts/display/' . $id . '/' . $postToDisplay['Post']['slug']);
+			}
+			$this->set('post', $postToDisplay);
 		} else {
 			$this->redirect('/', 404);
 		}
@@ -34,12 +36,13 @@ class PostsController extends AppController {
 		if ($this->request->is('post')) {
             $this->Post->create();
             if ($this->Post->save($this->request->data)) {
-                $this->Flash->success(__('La page a bien été sauvegardée'));
+                $this->Flash->success('La page a bien été sauvegardée');
                 return $this->redirect(array('action' => 'panel'));
             }
+            
             $this->Flash->error(
-                __('La page n\'a pas pu être sauvegardée. Réessayez ou contactez l\'administrateur du site')
-            );
+            		'La page n\'a pas pu être sauvegardée. Réessayez ou contactez l\'administrateur du site'
+			);
         }
 	}
 	
@@ -47,19 +50,19 @@ class PostsController extends AppController {
 	public function edit($id = null) {
         $this->Post->id = $id;
         if (!$this->Post->exists()) {
-            throw new NotFoundException(__('Page invalide'));
+            throw new NotFoundException('Page invalide');
         }
+        
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Post->save($this->request->data)) {
-                $this->Flash->success(__('La page a bien été sauvegardée'));
+                $this->Flash->success('La page a bien été sauvegardée');
                 return $this->redirect(array('action' => 'panel'));
             }
             $this->Flash->error(
-                __('La page n\'a pas pu être sauvegardée. Réessayez ou contactez l\'administrateur du site')
+                	'La page n\'a pas pu être sauvegardée. Réessayez ou contactez l\'administrateur du site'
             );
         } else {
-            debug($this->request->data = $this->Post->findById($id));
-            //unset($this->request->data['Post']['password']);
+            $this->request->data = $this->Post->findById($id);
         }
     }
 
@@ -70,13 +73,14 @@ class PostsController extends AppController {
 
         $this->Post->id = $id;
         if (!$this->Post->exists()) {
-            throw new NotFoundException(__('Page invalide'));
+            throw new NotFoundException('Page invalide');
         }
+        
         if ($this->Post->delete()) {
-            $this->Flash->success(__('Page supprimée avec succès'));
+            $this->Flash->success('Page supprimée avec succès');
             return $this->redirect(array('action' => 'panel'));
         }
-        $this->Flash->error(__('La page n\'a pas pu être supprimée'));
+        $this->Flash->error('La page n\'a pas pu être supprimée');
         return $this->redirect(array('action' => 'panel'));
     }
 }

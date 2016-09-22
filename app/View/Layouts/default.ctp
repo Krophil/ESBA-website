@@ -5,7 +5,7 @@
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	
-	<title><?= $this->fetch('title'); ?></title>
+	<title>École de Ski du Ballon d'Alsace</title>
 	
 	<?php
 		echo $this->Html->meta('icon', 'favicon.ico');
@@ -37,13 +37,9 @@
 		<div class="col-md-9">
 			<?= $this->element('navbar') ?>
 			
-			<div class="alert alert-dismissible alert-warning">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<?= $this->element('warning-sidebar') ?>
-			</div>
+			<?= $this->Flash->render() ?>
 			
 			<div class="col-main">
-				<?= $this->Flash->render() ?>
 				<?= $this->fetch('content'); ?>
 			</div>
 		

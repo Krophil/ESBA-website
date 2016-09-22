@@ -97,8 +97,9 @@ CKEDITOR.stylesSet.add( 'default', [
 		attributes: {
 			cellpadding: '5',
 			cellspacing: '0',
-			border: '1',
-			bordercolor: '#ccc'
+			border: '0',
+			bordercolor: '#ccc',
+			width: ""
 		},
 		styles: {
 			'border-collapse': 'collapse'

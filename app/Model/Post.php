@@ -24,7 +24,11 @@ class Post extends AppModel {
             'required' => array(
                 'rule' => 'notBlank',
                 'message' => 'Un slug est requis'
-            )
+            ),
+			'slug-rule' => array(
+				'rule' => 'alphaNumericDashUnderscore',
+				'message' => 'Le slug ne peut contenir que des lettres en minuscules, des chiffres, des tirets et des tirets bas'
+			)
         ),
     );
 	
@@ -33,6 +37,14 @@ class Post extends AppModel {
 		return $this->find('first', array(
 				'conditions'	=> array('id' => $id),
 		));
+	}
+	
+	
+	public function alphaNumericDashUnderscore($check) {
+		$value = array_values($check);
+		$value = $value[0];
+		
+		return preg_match('|^[0-9a-z_-]*$|', $value);
 	}
 }
 

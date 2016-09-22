@@ -18,6 +18,11 @@ class NewsController extends AppController {
 	public function index() {
 		$this->set('lastNews', $this->News->getLastNews(5));
 	}
+	
+	
+	public function panel() {
+		
+	}
 }
 
 ?>

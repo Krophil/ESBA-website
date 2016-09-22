@@ -7,9 +7,11 @@
 			<span class="icon-bar"></span>
 		</button>
 		<?= $this->Html->link(
-				'ESBA',
+				$this->Html->image('blason.png', array(
+						'alt'	=> 'École de Ski du Ballon d\'Alsace',
+				)),
 				'/',
-				array('class' => 'navbar-brand')
+				array('class' => 'navbar-brand', 'escape' => false)
 		) ?>
 	</div>
 	
@@ -62,15 +64,6 @@
 			endforeach;
 			?>
 		
-		</ul>
-		
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<?= $this->Html->link(
-						'Contact',
-						'/divers/contact'
-				) ?>
-			</li>
 		</ul>
 	</div>
 </nav>
