@@ -31,33 +31,28 @@
  */
 //	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-Router::connect('/', array(
-		'controller'	=> 'news',
-		'action'		=> 'index',
-));
+	Router::connect('/', array(
+			'controller'	=> 'news',
+			'action'		=> 'index',
+	));
 
-Router::connect('/news/*', array(
-		'controller'	=> 'news',
-		'action'		=> 'index',
-));
+	Router::connect('/posts', array(
+			'controller'	=> 'posts',
+			'action'		=> 'display',
+	));
 
-Router::connect('/posts/*', array(
-		'controller'	=> 'posts',
-		'action'		=> 'display',
-));
+	Router::connect('/divers/:action/*', array(
+			'controller'	=> 'misc',
+	));
 
-Router::connect('/divers/:action/*', array(
-		'controller'	=> 'misc',
-));
+	Router::connect('/admin', array(
+			'controller'	=> 'users',
+			'action'		=> 'panel',
+	));
 
-Router::connect('/admin', array(
-		'controller'	=> 'users',
-		'action'		=> 'panel',
-));
-
-Router::connect('/admin/:action/*', array(
-		'controller'	=> 'users',
-));
+	Router::connect('/admin/:action/*', array(
+			'controller'	=> 'users',
+	));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
