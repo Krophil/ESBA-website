@@ -5,7 +5,7 @@
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	
-	<title>École de Ski du Ballon d'Alsace</title>
+	<title><?= $this->fetch('title'); ?></title>
 	
 	<?php
 		echo $this->Html->meta('icon', 'favicon.ico');
@@ -28,20 +28,19 @@
 <body>
 <div class="container">
 	<div id="header" class="hidden-xs">
-		<?= $this->Html->link(
-			$this->Html->image('header.png', array(
+		<?= $this->Html->image('header.png', array(
 				'alt'	=> 'École de Ski du Ballon d\'Alsace',
-			)),
-			'/',
-			array('escape' => false)
-		) ?>
+		)); ?>
 	</div>
 	
 	<div class="row">
 		<div class="col-md-9">
 			<?= $this->element('navbar') ?>
 			
-			<?= $this->Flash->render() ?>
+			<div class="alert alert-dismissible alert-warning">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<?= $this->Flash->render() ?>
+			</div>
 			
 			<div class="col-main">
 				<?= $this->fetch('content'); ?>
