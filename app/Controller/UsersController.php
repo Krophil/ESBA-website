@@ -14,6 +14,11 @@ class UsersController extends AppController {
 
 	
     public function panel() {}
+    
+    
+    public function manage() {
+		$this->set('userList', $this->User->find('all'));
+	}
 
 	
     public function add() {

@@ -1,11 +1,13 @@
 <div class="users form">
-<?php echo $this->Form->create('User'); ?>
+<?= $this->Form->create('User'); ?>
     <fieldset>
-        <legend><?php echo __('Add User'); ?></legend>
-        <?php
-		echo $this->Form->input('username');
-        echo $this->Form->input('password');
-		?>
+        <legend>Ajout d'un administrateur</legend>
+		<div class="form-group">
+			<?= $this->Form->input('username'); ?>
+		</div>
+		<div class="form-group">
+			<?= $this->Form->input('password'); ?>
+		</div>
     </fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?= $this->Form->end('Valider'); ?>
 </div>
