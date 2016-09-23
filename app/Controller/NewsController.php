@@ -20,9 +20,18 @@ class NewsController extends AppController {
 	}
 	
 	
-	public function panel() {
-		
+	public function manage() {
+		$this->set('newsList', $this->News->find('all', array('order' => 'created DESC')));
 	}
+	
+	
+	public function add() {}
+	
+	
+	public function edit() {}
+	
+	
+	public function delete() {}
 }
 
 ?>

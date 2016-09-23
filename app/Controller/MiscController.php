@@ -21,9 +21,10 @@ class MiscController extends AppController {
 	public function partenaires() {}
 	
 	
-	public function panel() {
-		
-	}
+	public function manage() {}
+	
+	
+	public function edit() {}
 }
 
 ?>

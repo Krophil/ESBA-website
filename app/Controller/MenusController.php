@@ -19,7 +19,7 @@ class MenusController extends AppController {
 	}
 	
 	
-	public function panel() {}
+	public function manage() {}
 	
 	
 	public function add() {

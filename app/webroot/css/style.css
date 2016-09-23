@@ -1,5 +1,3 @@
-/* For all pages */
-
 @media only screen and (min-width: 768px) {
 	body {
 		background: url('/app/webroot/img/background.jpg') fixed no-repeat;
@@ -40,8 +38,6 @@
 	margin-bottom: 15px;
 }
 
-/* For index.php */
-
 .meteo {
     width: 150px;
     height: 300px;
@@ -54,8 +50,6 @@
 	border: 0;
 	padding: 0;
 }
-
-/* For page.php */
 
 .page-div p {
     text-align: justify;
@@ -76,24 +70,13 @@ th{background-color: #A9D0F5}
 
 tr:nth-child(even) {background-color: #E0F2F7}
 
-/* For admin/index.php */
-
 .jumbo-title .admin-btn {
     margin-top: 4em;
     text-align: center;
 }
 
-/* For admin/.../index.php */
-
-.shortcut-btn {
-    display: inline-block;
-    margin-left: 1em;
-}
-
-/* For admin/menu/index.php */
-
-.sub-panel {
-    padding-left: 5em;
+.admin-btn .btn {
+	margin-left: 1em;
 }
 
 .col-main {

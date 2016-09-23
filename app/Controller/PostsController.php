@@ -15,7 +15,9 @@ class PostsController extends AppController {
 	}
 	
 	
-	public function panel() {}
+	public function manage() {
+		$this->set('postList', $this->Post->find('all', array('order' => 'updated DESC')));
+	}
 	
 	
 	public function display($id=null, $slug=null) {
@@ -31,6 +33,7 @@ class PostsController extends AppController {
 			$this->redirect('/', 404);
 		}
 	}
+	
 	
 	public function add() {
 		if ($this->request->is('post')) {

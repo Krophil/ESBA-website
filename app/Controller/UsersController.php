@@ -17,7 +17,7 @@ class UsersController extends AppController {
     
     
     public function manage() {
-		$this->set('userList', $this->User->find('all'));
+		$this->set('userList', $this->User->find('all', array('order' => 'id ASC')));
 	}
 
 	
@@ -80,6 +80,7 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
+				$this->Flash->success('Connexion réussie');
 				return $this->redirect($this->Auth->redirectUrl());
 			}
 			$this->Flash->error('Nom d\'utilisateur ou mot de passe invalide, veuillez réessayer');

@@ -1,14 +1,18 @@
 <div class="posts form">
-<?php echo $this->Form->create('Post'); ?>
+    <?= $this->Form->create('Post'); ?>
     <fieldset>
-        <legend><?php echo __('Ajouter une page'); ?></legend>
-        <?php
-		echo $this->Form->input('title');
-        echo $this->Form->textarea('content', array('class'=>'ckeditor'));
-		echo $this->Form->input('slug');
-		?>
+        <legend>Ajout d'une page</legend>
+        <div class="form-group">
+            <?= $this->Form->input('title'); ?>
+        </div>
+        <div class="form-group">
+            <?= $this->Form->textarea('content', array('class' => 'ckeditor')); ?>
+        </div>
+        <div class="form-group">
+            <?= $this->Form->input('slug'); ?>
+        </div>
     </fieldset>
-<?php echo $this->Form->end(__('Envoyer')); ?>
+    <?= $this->Form->end('Valider'); ?>
 </div>
 
 <?php $this->addScript($this->Html->script('ckeditor/ckeditor')); ?>

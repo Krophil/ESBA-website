@@ -1,0 +1,15 @@
+<div class="news form">
+	<?= $this->Form->create('News'); ?>
+	<fieldset>
+		<legend>Modification d'une actualité</legend>
+		<div class="form-group">
+			<?= $this->Form->input('title'); ?>
+		</div>
+		<div class="form-group">
+			<?= $this->Form->textarea('content', array('class' => 'ckeditor')); ?>
+		</div>
+	</fieldset>
+	<?= $this->Form->end('Valider'); ?>
+</div>
+
+<?php $this->addScript($this->Html->script('ckeditor/ckeditor')); ?>
