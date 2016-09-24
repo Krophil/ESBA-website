@@ -26,7 +26,7 @@ class UsersController extends AppController {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Flash->success('L\'utilisateur a bien été sauvegardé');
-                return $this->redirect(array('action' => 'panel'));
+                return $this->redirect(array('action' => 'manage'));
             }
             
             $this->Flash->error(
@@ -45,7 +45,7 @@ class UsersController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
                 $this->Flash->success('L\'utilisateur a bien été sauvegardé');
-                return $this->redirect(array('action' => 'panel'));
+                return $this->redirect(array('action' => 'manage'));
             }
             
             $this->Flash->error(
@@ -69,11 +69,11 @@ class UsersController extends AppController {
         
         if ($this->User->delete()) {
             $this->Flash->success('Utilisateur supprimé avec succès');
-            return $this->redirect(array('action' => 'panel'));
+            return $this->redirect(array('action' => 'manage'));
         }
         
         $this->Flash->error('L\'utilisateur n\'a pas pu être supprimé');
-        return $this->redirect(array('action' => 'panel'));
+        return $this->redirect(array('action' => 'manage'));
     }
 	
 	

@@ -40,7 +40,7 @@ class PostsController extends AppController {
             $this->Post->create();
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success('La page a bien été sauvegardée');
-                return $this->redirect(array('action' => 'panel'));
+                return $this->redirect(array('action' => 'manage'));
             }
             
             $this->Flash->error(
@@ -59,7 +59,7 @@ class PostsController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success('La page a bien été sauvegardée');
-                return $this->redirect(array('action' => 'panel'));
+                return $this->redirect(array('action' => 'manage'));
             }
             $this->Flash->error(
                 	'La page n\'a pas pu être sauvegardée. Réessayez ou contactez l\'administrateur du site'
@@ -81,10 +81,10 @@ class PostsController extends AppController {
         
         if ($this->Post->delete()) {
             $this->Flash->success('Page supprimée avec succès');
-            return $this->redirect(array('action' => 'panel'));
+            return $this->redirect(array('action' => 'manage'));
         }
         $this->Flash->error('La page n\'a pas pu être supprimée');
-        return $this->redirect(array('action' => 'panel'));
+        return $this->redirect(array('action' => 'manage'));
     }
 }
 
