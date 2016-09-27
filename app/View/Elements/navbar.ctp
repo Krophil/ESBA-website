@@ -6,13 +6,6 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<?= $this->Html->link(
-				$this->Html->image('blason.png', array(
-						'alt'	=> 'École de Ski du Ballon d\'Alsace',
-				)),
-				'/',
-				array('class' => 'navbar-brand', 'escape' => false)
-		) ?>
 	</div>
 	
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
