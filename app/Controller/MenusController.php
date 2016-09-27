@@ -64,16 +64,16 @@ class MenusController extends AppController {
 	
 	public function delete($id = null) {
 		
-		$this->request->allowMethod('post');
-		
 		$this->Menu->id = $id;
 		if (!$this->Menu->exists()) {
 			throw new NotFoundException('Menu invalide');
 		}
 		
-		if ($this->Menu->delete()) {
-			$this->Flash->success('Menu supprimée avec succès');
-			return $this->redirect(array('action' => 'manage'));
+		if($this->canBeDeleted($id)) {
+			if ($this->Menu->delete()) {
+				$this->Flash->success('Menu supprimée avec succès');
+				return $this->redirect(array('action' => 'manage'));
+			}
 		}
 		
 		$this->Flash->error('Le menu n\'a pas pu être supprimé');
@@ -94,6 +94,16 @@ class MenusController extends AppController {
 			$this->Flash->error('Un menu enfant doit pointer vers une page', array('key' => 'form'));
 			return false;
 		}
+		return true;
+	}
+	
+	public function canBeDeleted($id) {
+		
+		if(count($this->Menu->getSubMenuList($id)) > 0) {
+			$this->Flash->error('Le menu possède encore des sous-menus', array('key' => 'form'));
+			return false;
+		}
+		
 		return true;
 	}
 	

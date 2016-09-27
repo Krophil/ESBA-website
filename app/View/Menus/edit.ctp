@@ -30,7 +30,7 @@ $listPosts = $this->requestAction('/menus/getPostsList/' . $this->request->data[
 					"<h4>Menu parent</h4>",
 					array('class' => 'control-label')
 			) ?>
-			<?= $this->Form->select('parent_id', array_merge(array(0 => 'Pas de menu parent'), $listParents), array(
+			<?= $this->Form->select('parent_id', array(0 => 'Pas de menu parent', 'Menus disponibles' => $listParents), array(
 					'class' => 'form-control',
 					'label' => false,
 			)); ?>
@@ -58,7 +58,7 @@ $listPosts = $this->requestAction('/menus/getPostsList/' . $this->request->data[
 					"<h4>Page associée</h4>",
 					array('class' => 'control-label')
 			) ?>
-			<?= $this->Form->select('post_id', array_merge(array(0 => 'Pas de page associée'), $listPosts), array(
+			<?= $this->Form->select('post_id', array(0 => 'Pas de page associée', 'Pages disponibles' => $listPosts), array(
 					'class' => 'form-control',
 					'label' => false,
 			)); ?>
