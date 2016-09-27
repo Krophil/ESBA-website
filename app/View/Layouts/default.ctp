@@ -42,6 +42,7 @@
 			<?= $this->element('navbar') ?>
 			
 			<?= $this->Flash->render() ?>
+			<?= $this->Flash->render('form') ?>
 			
 			<div class="col-main">
 				<?= $this->fetch('content'); ?>

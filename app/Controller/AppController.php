@@ -52,6 +52,8 @@ class AppController extends Controller {
 		if (isset($this->params['requested'])) {
 			$this->Auth->allow($this->action);
 		}
+		
+		$this->Auth->authError = 'Vous devez être connecté pour accéder à cette page.';
 	}
 	
 	
