@@ -66,9 +66,24 @@ th, td {
     margin-bottom: 20px;
 }
 
-th{background-color: #A9D0F5}
 
-tr:nth-child(even) {background-color: #E0F2F7}
+tbody>tr:nth-child(odd) {
+    background: lightblue;
+}
+
+tbody>tr:hover {
+    background: lightgrey;
+    width: 100%;
+}
+
+tr:first-child td {
+    font-weight: bold;
+    background-color: #81B8C8;
+}
+
+.menu-manager tbody>tr {
+	background-color:none !important;
+}
 
 .jumbo-title .admin-btn {
     margin-top: 4em;
@@ -81,4 +96,18 @@ tr:nth-child(even) {background-color: #E0F2F7}
 
 .col-main {
 	background: #EEEEEE;
+}
+
+.content {
+	padding:10px; 
+}
+
+.date-update {
+	text-align:right;
+	font-style: italic;
+}
+
+.jumbotron {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
