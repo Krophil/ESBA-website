@@ -6,6 +6,15 @@ App::uses('AppController', 'Controller');
 class NewsController extends AppController {
 	
 	public $helpers = array('Html');
+
+	public $components = array('Paginator');
+
+	public $paginate = array(
+        'limit' => 5,
+        'order' => array(
+            'News.created' => 'DESC'
+        )
+    );
 	
 	
 	public function beforeFilter() {
@@ -16,7 +25,11 @@ class NewsController extends AppController {
 	
 
 	public function index() {
-		$this->set('lastNews', $this->News->getLastNews(5));
+		$this->Paginator->settings = $this->paginate;
+		$lastNews = $this->Paginator->paginate('News');
+		$this->set('lastNews', $lastNews);
+
+		//$this->set('lastNews', $this->News->getLastNews(5));
 	}
 	
 	

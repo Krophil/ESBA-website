@@ -111,3 +111,7 @@ tr:first-child td {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.pages {
+	text-align: center;
+}
