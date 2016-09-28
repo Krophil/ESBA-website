@@ -26,7 +26,7 @@ class NewsController extends AppController {
 	
 	
 	public function add() {
-		if ($this->request->is('news')) {
+		if ($this->request->is('post')) {
             $this->News->create();
             if ($this->News->save($this->request->data)) {
                 $this->Flash->success('L\'actualité a bien été sauvegardée');
@@ -46,7 +46,7 @@ class NewsController extends AppController {
             throw new NotFoundException('Actualité invalide');
         }
         
-        if ($this->request->is('news') || $this->request->is('put')) {
+        if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->News->save($this->request->data)) {
                 $this->Flash->success('L\'actualité a bien été sauvegardée');
                 return $this->redirect(array('action' => 'manage'));
@@ -61,7 +61,6 @@ class NewsController extends AppController {
 	
 	
 	public function delete($id = null) {
-		$this->request->allowMethod('news');
 
         $this->News->id = $id;
         if (!$this->News->exists()) {
