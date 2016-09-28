@@ -1,1 +1,0 @@
-Contenu de /divers/info
