@@ -3,7 +3,7 @@
 App::uses('AppController', 'Controller');
 
 
-class MiscController extends AppController {
+class MiscsController extends AppController {
 	
 	public $helpers = array('Html');
 	
@@ -18,16 +18,16 @@ class MiscController extends AppController {
 		$typeId = null;
 		switch ($type) {
 			case 'info':
-				$typeId = MiscType::INFO;
+				$typeId = 1;
 				break;
 			case 'plan':
-				$typeId = MiscType::PLAN;
+				$typeId = 2;
 				break;
 			case 'partenaires':
-				$typeId = MiscType::PARTENAIRES;
+				$typeId = 3;
 				break;
 			case 'contact':
-				$typeId = MiscType::CONTACT;
+				$typeId = 4;
 				break;
 			default:
 				throw new NotFoundException('Page invalide');
@@ -56,16 +56,16 @@ class MiscController extends AppController {
 			$typeId = null;
 			switch ($type) {
 				case 'info':
-					$typeId = MiscType::INFO;
+					$typeId = 1;
 					break;
 				case 'plan':
-					$typeId = MiscType::PLAN;
+					$typeId = 2;
 					break;
 				case 'partenaires':
-					$typeId = MiscType::PARTENAIRES;
+					$typeId = 3;
 					break;
 				case 'contact':
-					$typeId = MiscType::CONTACT;
+					$typeId = 4;
 					break;
 				default:
 					throw new NotFoundException('Page invalide');

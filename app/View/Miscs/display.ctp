@@ -2,16 +2,16 @@
 
 $typeString = '';
 switch ($page['Misc']['type']) {
-	case MiscType::INFO:
+	case 1:
 		$typeString = 'Informations';
 		break;
-	case MiscType::PLAN:
+	case 2:
 		$typeString = 'Plan d\'accès';
 		break;
-	case MiscType::PARTENAIRES:
+	case 3:
 		$typeString = 'Partenaires';
 		break;
-	case MiscType::CONTACT:
+	case 4:
 		$typeString = 'Contact';
 		break;
 	default:
@@ -26,9 +26,9 @@ switch ($page['Misc']['type']) {
 		<h1 class="page_title"><?= $typeString ?></h1>
 	</div>
 	
-	<?= $post['Misc']['content'] ?>
+	<?= $page['Misc']['content'] ?>
 	
 	<div class=date-update>
-		Dernière mise à jour : <?= date("d/m/Y", strtotime($post['Post']['created'])); ?>
+		Dernière mise à jour : <?= date("d/m/Y", strtotime($page['Misc']['created'])); ?>
 	</div>
 </div>

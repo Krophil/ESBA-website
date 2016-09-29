@@ -41,9 +41,13 @@
 			'action'		=> 'display',
 	));
 
-	Router::connect('/divers/:type', array('controller' => 'misc', 'action' => 'display'), array(
-			'type' => '[0-9a-zA-Z]+',
-			'pass' => array('type')
+	Router::connect('/divers/:type', array('controller' => 'miscs', 'action' => 'display'), array(
+			'type' => '[a-z]+',
+			'pass' => array('type'),
+	));
+
+	Router::connect('/divers/:action/*', array(
+			'controller'	=> 'miscs',
 	));
 
 	Router::connect('/admin', array(

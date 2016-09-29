@@ -1,10 +1,8 @@
 <div class="posts form">
-	<?= $this->Form->create('Post'); ?>
+	<?= $this->Form->create('Misc'); ?>
 	<fieldset>
-		<legend>Ajout d'une actualité</legend>
-		<div class="form-group">
-			<?= $this->Form->input('title'); ?>
-		</div>
+		<legend>Modification d'une page</legend>
+		<?= $this->Form->hidden('type'); ?>
 		<div class="form-group">
 			<?= $this->Form->textarea('content', array('class' => 'ckeditor')); ?>
 		</div>
