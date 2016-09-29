@@ -10,7 +10,7 @@ class NewsController extends AppController {
 	public $components = array('Paginator');
 
 	public $paginate = array(
-        'limit' => 5,
+        'limit' => 10,
         'order' => array(
             'News.created' => 'DESC'
         )
@@ -34,7 +34,10 @@ class NewsController extends AppController {
 	
 	
 	public function manage() {
-		$this->set('newsList', $this->News->find('all', array('order' => 'created DESC')));
+		$this->Paginator->settings = $this->paginate;
+		$newsList = $this->Paginator->paginate('News');
+		$this->set('newsList', $newsList);
+		//$this->set('newsList', $this->News->find('all', array('order' => 'created DESC')));
 	}
 	
 	
