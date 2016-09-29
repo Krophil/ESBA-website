@@ -115,3 +115,7 @@ tr:first-child td {
 .pages {
 	text-align: center;
 }
+
+.upload-bar {
+	height: 100%;
+}

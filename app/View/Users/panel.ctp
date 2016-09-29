@@ -5,6 +5,7 @@
 	
 	<div class="admin-btn">
 		<?= $this->Html->link('Actualités', '/news/manage', array('class' => 'btn btn-primary btn-lg')) ?>
+		<?= $this->Html->link('Diaporama', '/news/manage_carousel', array('class' => 'btn btn-primary btn-lg')) ?>
 		<?= $this->Html->link('Pages', '/posts/manage', array('class' => 'btn btn-primary btn-lg')) ?>
 		<?= $this->Html->link('Menus', '/menus/manage', array('class' => 'btn btn-primary btn-lg')) ?>
 		<?= $this->Html->link('Pages diverses', '/divers/manage', array('class' => 'btn btn-primary btn-lg')) ?>
