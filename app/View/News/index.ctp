@@ -56,7 +56,7 @@
 							array('class' => 'btn btn-warning', 'escape' => false)
 					);
 				?>
-				<?= $news['News']['title'] ?> | le <?= date("d/m/Y", strtotime($news['News']['created'])); ?>
+				<?= $news['News']['title'] ?> <div class=date-update style="display: inline">le <?= date("d/m/Y", strtotime($news['News']['created'])); ?></div>
 			</div>
 			
 			<div class="panel-body">
@@ -67,12 +67,12 @@
 		<?php endforeach; ?>
 	</div>
 	<div class="pages">
-	    <ul class="pagination">
+	    <ul class="pagination pagination-mini">
             <?php
-                echo $this->Paginator->prev(__('prev'), array('tag' => 'li'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
-                echo $this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'active','tag' => 'li','first' => 1));
-                echo $this->Paginator->next(__('next'), array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
-            ?>
+                echo $this->Paginator->prev(__('<'), array('tag' => 'li'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+		        echo $this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'active','tag' => 'li'));
+		        echo $this->Paginator->next('>', array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+		    ?>
         </ul>
     </div>
 </div>
