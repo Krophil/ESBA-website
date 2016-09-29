@@ -5,28 +5,28 @@
 			<div class="btn-group-vertical btn-block">
 				<?= $this->Html->link(
 						'Informations',
-						'/divers/info',
+						'/divers/display/info',
 						array(
 								'class'	=> 'btn btn-default',
 						)
 				) ?>
 				<?= $this->Html->link(
 						'Plan d\'accès',
-						'/divers/plan',
+						'/divers/display/plan',
 						array(
 								'class'	=> 'btn btn-default',
 						)
 				) ?>
 				<?= $this->Html->link(
 						'Partenaires',
-						'/divers/partenaires',
+						'/divers/display/partenaires',
 						array(
 								'class'	=> 'btn btn-default',
 						)
 				) ?>
 				<?= $this->Html->link(
 						'Contact',
-						'/divers/contact',
+						'/divers/display/contact',
 						array(
 								'class'	=> 'btn btn-default',
 						)

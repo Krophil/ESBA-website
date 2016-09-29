@@ -11,7 +11,7 @@ class MiscsController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		
-		$this->Auth->allow('contact', 'partenaires', 'plan', 'info');
+		$this->Auth->allow('display');
 	}
 	
 	public function display($type = null) {
