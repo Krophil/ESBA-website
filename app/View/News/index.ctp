@@ -52,6 +52,14 @@
 			
 		<div class="news panel panel-primary">
 			<div class="panel-heading">
+				<?php
+				if($this->Session->read('Auth.User.id'))
+					echo $this->Html->link(
+							'<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>',
+							'/news/edit/' . $news['News']['id'],
+							array('class' => 'btn btn-warning', 'escape' => false)
+					);
+				?>
 				<?= $news['News']['title'] ?> | le <?= date("d/m/Y", strtotime($news['News']['created'])); ?>
 			</div>
 			

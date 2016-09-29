@@ -1,7 +1,7 @@
 <div class="jumbotron jumbo-title">
 	<h1>Espace administrateur</h1>
 	
-	Ici vous pouvez modifier les différents éléments du site web de l'école de ski du Ballon d'Alsace.
+	Ici vous pouvez modifier les différents éléments du site web.
 	
 	<div class="admin-btn">
 		<?= $this->Html->link('Actualités', '/news/manage', array('class' => 'btn btn-primary btn-lg')) ?>

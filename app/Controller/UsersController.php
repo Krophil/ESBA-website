@@ -44,7 +44,7 @@ class UsersController extends AppController {
         
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Flash->success('L\'utilisateur a bien été sauvegardé');
+                $this->Flash->success('L\'utilisateur a bien été sauvegardé' . debug($this->request->data));
                 return $this->redirect(array('action' => 'manage'));
             }
             
@@ -54,6 +54,7 @@ class UsersController extends AppController {
         } else {
             $this->request->data = $this->User->findById($id);
             unset($this->request->data['User']['password']);
+			unset($this->request->data['User']['password_confirm']);
         }
     }
 

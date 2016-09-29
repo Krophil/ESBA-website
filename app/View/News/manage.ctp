@@ -1,7 +1,13 @@
+<div class="jumbotron jumbo-title">
+	<h1>Gestion des actualités</h1>
+	
+	Ici vous pouvez ajouter, modifier ou supprimer les actualités de la page d'accueil.
+</div>
+
 <div class="panel panel-default">
 	<div class="panel-body">
 		<?= $this->Html->link(
-			'Ajouter une nouvelle actualité <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>',
+				'<h5>Ajouter une nouvelle actualité <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></h5>',
 			'/news/add',
 			array('class' => 'btn btn-default btn-xs', 'escape' => false)
 		); ?>

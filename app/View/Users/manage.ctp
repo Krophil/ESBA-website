@@ -1,7 +1,13 @@
+<div class="jumbotron jumbo-title">
+	<h1>Gestion des administrateurs</h1>
+	
+	Ici vous pouvez ajouter, modifier ou supprimer des administrateurs pour le site.
+</div>
+
 <div class="panel panel-default">
 	<div class="panel-body">
 		<?= $this->Html->link(
-			'Ajouter un nouvel administrateur <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>',
+				'<h5>Ajouter un nouvel administrateur <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></h5>',
 			'/users/add',
 			array('class' => 'btn btn-default btn-xs', 'escape' => false)
 		); ?>

@@ -66,6 +66,6 @@ $listPosts = $this->requestAction('/menus/getPostsList/' . $this->request->data[
 	
 	</fieldset>
 	
-	<?= $this->Form->end('Valider'); ?>
+	<?= $this->Form->end(array('label' => 'Valider', 'class' => 'btn btn-primary')); ?>
 
 </div>

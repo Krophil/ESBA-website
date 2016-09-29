@@ -1,7 +1,13 @@
+<div class="jumbotron jumbo-title">
+	<h1>Gestion des pages</h1>
+	
+	Ici vous pouvez ajouter, modifier ou supprimer les différentes pages du site.
+</div>
+
 <div class="panel panel-default">
 	<div class="panel-body">
 		<?= $this->Html->link(
-			'Ajouter une nouvelle page <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>',
+				'<h5>Ajouter une nouvelle page <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></h5>',
 			'/posts/add',
 			array('class' => 'btn btn-default btn-xs', 'escape' => false)
 		); ?>

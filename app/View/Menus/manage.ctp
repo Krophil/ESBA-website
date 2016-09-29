@@ -1,7 +1,13 @@
+<div class="jumbotron jumbo-title">
+	<h1>Gestion des menus</h1>
+	
+	Ici vous pouvez ajouter, modifier ou supprimer les menus du site.
+</div>
+
 <div class="panel panel-default">
 	<div class="panel-body">
 		<?= $this->Html->link(
-			'<h4>Ajouter un nouveau menu <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></h4>',
+			'<h5>Ajouter un nouveau menu <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></h5>',
 			'/menus/add',
 			array('class' => 'btn btn-default btn-xs', 'escape' => false)
 		); ?>
